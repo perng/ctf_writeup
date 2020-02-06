@@ -10,7 +10,7 @@
 ## Solution
 
 Look into the binary using Ghidra. 
-``
+```c
 undefined8 main(void)
 
 {
@@ -20,11 +20,11 @@ undefined8 main(void)
   print_flag();
   return 0;
 }
-``
+```
 Obviously, set_timer() is the one that prevents the flag to be printed. We can simply modify the binary and replace the call with [NOP](https://c9x.me/x86/html/file_module_x86_id_217.html) which does nothing. The NOP opcode is 0x90.
 
 Here is the disassembled code for the relevant code.
-``
+```c-objdump
         00400836 b8 00 00        MOV        EAX, 0x0
         0040083b e8 a9 ff        CALL       header                                           ; undefined header(void)
         00400840 b8 00 00        MOV        EAX, 0x0
@@ -34,7 +34,7 @@ Here is the disassembled code for the relevant code.
         00400854 b8 00 00        MOV        EAX, 0x0
         00400859 e8 63 ff        CALL       print_flag                                       ; undefined print_flag(void)
         0040085e b8 00 00        MOV        EAX, 0x0
-``
+```
 We just need to fill the bytes form 845 to 849 with 0x90. 
 
 ![Edit the binary with hexedit](be_quick.png)
