@@ -8,6 +8,7 @@
 > Can you run it fast enough?
 
 ## Solution
+The program does not output flag saying the machine is not fast enough. There must be some code making unnecessary delay. 
 
 Look into the binary using Ghidra. 
 ```c
@@ -44,5 +45,5 @@ Then run the modified binary, the flag would be out.
 
 
 ```
-The flag.
+The flag: <!--  picoCTF{why_bother_doing_unnecessary_computation_27f28e71} -->
 ```
