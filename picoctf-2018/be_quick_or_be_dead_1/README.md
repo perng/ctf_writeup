@@ -44,6 +44,6 @@ We just need to fill the bytes form 845 to 849 with 0x90.
 Then run the modified binary, the flag would be out.
 
 
-```
-The flag: <!--  picoCTF{why_bother_doing_unnecessary_computation_27f28e71} -->
-```
+
+The flag: 
+<!--  picoCTF{why_bother_doing_unnecessary_computation_27f28e71} -->
