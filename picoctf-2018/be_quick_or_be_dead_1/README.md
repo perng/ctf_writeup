@@ -25,6 +25,7 @@ Obviously, set_timer() is the one that prevents the flag to be printed. We can s
 
 Here is the disassembled code for the relevant code.
 ```c-objdump
+
         00400836 b8 00 00        MOV        EAX, 0x0
         0040083b e8 a9 ff        CALL       header                                           ; undefined header(void)
         00400840 b8 00 00        MOV        EAX, 0x0
